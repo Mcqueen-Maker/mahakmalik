@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mahak Malik - Senior DevOps Engineer specializing in AWS, CI/CD, and cloud infrastructure">
+    <title>Mahak Malik | Senior DevOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">MM</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">mahak@devops:~</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-line">
+                        <span class="prompt">$</span>
+                        <span class="command typing">whoami</span>
+                    </p>
+                    <div class="terminal-output">
+                        <h1 class="hero-name">Mahak Malik</h1>
+                        <p class="hero-title">Senior DevOps Engineer</p>
+                    </div>
+                    <p class="terminal-line">
+                        <span class="prompt">$</span>
+                        <span class="command">cat mission.txt</span>
+                    </p>
+                    <p class="hero-tagline">Building scalable cloud infrastructure &amp; automating everything in between</p>
+                    <p class="terminal-line">
+                        <span class="prompt">$</span>
+                        <span class="cursor">_</span>
+                    </p>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <span class="btn-icon">→</span>
+                    Get In Touch
+                </a>
+                <a href="#experience" class="btn btn-secondary">
+                    <span class="btn-icon">↓</span>
+                    View My Work
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="6">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">Years at EAB</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="2">0</span>
+                    <span class="stat-label">AWS Certifications</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-lead">
+                        As a seasoned <span class="highlight">DevOps Engineer</span>, I bring deep expertise across the 
+                        <span class="highlight">Software Development Life Cycle (SDLC)</span> and the full 
+                        <span class="highlight">CI/CD pipeline</span>.
+                    </p>
+                    <p>
+                        My experience spans a wide range of AWS services, Docker, Ansible, and Python, enabling me to 
+                        architect and maintain scalable, reliable cloud infrastructure for my team at EAB. I am a proactive, 
+                        self-motivated problem solver with strong communication and collaboration skills, consistently 
+                        delivering high-quality solutions on time.
+                    </p>
+                    <p>
+                        I take pride in building automation, improving deployment efficiency, and ensuring system 
+                        reliability to support seamless product delivery.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span>Washington, DC</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🏢</span>
+                            <span>EAB</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🎓</span>
+                            <span>MS Computer Science, GWU</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-filename">mahak.yaml</span>
+                        </div>
+                        <pre class="code-content"><code><span class="yaml-key">name:</span> <span class="yaml-value">"Mahak Malik"</span>
+<span class="yaml-key">role:</span> <span class="yaml-value">"Senior DevOps Engineer"</span>
+<span class="yaml-key">company:</span> <span class="yaml-value">"EAB"</span>
+<span class="yaml-key">location:</span> <span class="yaml-value">"Washington, DC"</span>
+
+<span class="yaml-key">education:</span>
+  <span class="yaml-key">masters:</span>
+    <span class="yaml-key">degree:</span> <span class="yaml-value">"MS Computer Science"</span>
+    <span class="yaml-key">school:</span> <span class="yaml-value">"George Washington University"</span>
+    <span class="yaml-key">focus:</span> <span class="yaml-value">"Information Security"</span>
+
+<span class="yaml-key">languages:</span>
+  - <span class="yaml-value">English (Professional)</span>
+  - <span class="yaml-value">Hindi (Native)</span>
+
+<span class="yaml-key">passions:</span>
+  - <span class="yaml-value">Cloud Architecture</span>
+  - <span class="yaml-value">Automation</span>
+  - <span class="yaml-value">Infrastructure as Code</span>
+  - <span class="yaml-value">Security</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Tech Stack</span>
+                <h2 class="section-title">Skills & Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">☁️</span>
+                        <h3>Cloud & Infrastructure</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="95">
+                            <span class="skill-name">AWS</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <span class="skill-name">CloudFormation</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <span class="skill-name">EC2 / ECS</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <span class="skill-name">Lambda / Step Functions</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <span class="skill-name">S3 / CloudWatch</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">🔄</span>
+                        <h3>DevOps & CI/CD</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="90">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <span class="skill-name">Ansible</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <span class="skill-name">Git / GitLab</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <span class="skill-name">Infrastructure as Code</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">💻</span>
+                        <h3>Programming & Databases</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="85">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <span class="skill-name">Bash / Shell Scripting</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <span class="skill-name">MySQL / PostgreSQL</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="75">
+                            <span class="skill-name">SQL / Data Queries</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">🔒</span>
+                        <h3>Security & Testing</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="85">
+                            <span class="skill-name">Veracode / WIZ</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <span class="skill-name">Security Protocols</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <span class="skill-name">Test Automation</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <span class="skill-name">Selenium / Robot Framework</span>
+                            <div class="skill-bar"><div class="skill-progress"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tools-cloud">
+                <h3>Tools & Technologies</h3>
+                <div class="tools-list">
+                    <span class="tool-tag">AWS</span>
+                    <span class="tool-tag">Docker</span>
+                    <span class="tool-tag">Ansible</span>
+                    <span class="tool-tag">Python</span>
+                    <span class="tool-tag">CloudFormation</span>
+                    <span class="tool-tag">GitLab CI</span>
+                    <span class="tool-tag">ECS</span>
+                    <span class="tool-tag">Lambda</span>
+                    <span class="tool-tag">S3</span>
+                    <span class="tool-tag">EC2</span>
+                    <span class="tool-tag">CloudWatch</span>
+                    <span class="tool-tag">Step Functions</span>
+                    <span class="tool-tag">Veracode</span>
+                    <span class="tool-tag">WIZ</span>
+                    <span class="tool-tag">MySQL</span>
+                    <span class="tool-tag">PostgreSQL</span>
+                    <span class="tool-tag">Selenium</span>
+                    <span class="tool-tag">Robot Framework</span>
+                    <span class="tool-tag">JIRA</span>
+                    <span class="tool-tag">Agile/Scrum</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Career Journey</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker current"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Senior DevOps Engineer</h3>
+                                <span class="company">EAB</span>
+                            </div>
+                            <span class="timeline-date">Nov 2022 - Present</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Troubleshooting Infrastructure development and AWS Services</li>
+                            <li>Experience in Container services like ECS</li>
+                            <li>Accredited <strong>CloudFormation Subject Matter Expert</strong></li>
+                            <li>Building CI/CD Pipelines for seamless deployment</li>
+                            <li>Code vulnerability scans and remediation using Veracode and WIZ</li>
+                            <li>Conduct code and design reviews with focus on security and OOP principles</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>AWS</span>
+                            <span>ECS</span>
+                            <span>CloudFormation</span>
+                            <span>CI/CD</span>
+                            <span>Veracode</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Senior Software Development Engineer in Test</h3>
+                                <span class="company">EAB</span>
+                            </div>
+                            <span class="timeline-date">Oct 2021 - Nov 2022</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Maintained AWS resources via stacks (EC2, S3, Lambdas, KMS, etc.)</li>
+                            <li>Re-structured resources to remove stack dependencies</li>
+                            <li>Implemented security protocols and maintained security certificates</li>
+                            <li>Developed utilities for managing secrets of resources</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>AWS</span>
+                            <span>EC2</span>
+                            <span>Lambda</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Software Developer in Test</h3>
+                                <span class="company">EAB</span>
+                            </div>
+                            <span class="timeline-date">Aug 2019 - Oct 2021</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Designed Test Automation Framework using Python, Robot-Selenium & PostgreSQL</li>
+                            <li>Automated sprint stories and converted manual test cases to automation</li>
+                            <li>Web services testing using Python request library</li>
+                            <li>Extensive backend testing using SQL queries and DataGrip</li>
+                            <li>Followed Agile-Scrum methodology and participated in all ceremonies</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Python</span>
+                            <span>Selenium</span>
+                            <span>PostgreSQL</span>
+                            <span>Agile</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Graduate Teaching Assistant</h3>
+                                <span class="company">George Washington University</span>
+                            </div>
+                            <span class="timeline-date">Aug 2017 - Oct 2021</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Teaching Assistant for Computer Security course</li>
+                            <li>Teaching Assistant for Database Systems</li>
+                            <li>Teaching Assistant for JAVA programming</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Teaching</span>
+                            <span>Security</span>
+                            <span>Databases</span>
+                            <span>Java</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Software Engineer</h3>
+                                <span class="company">Infosys</span>
+                            </div>
+                            <span class="timeline-date">Jul 2014 - Aug 2017</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Designed railways website with booking, scheduling & login features</li>
+                            <li>Handled front-end using PHP, JavaScript, HTML, CSS</li>
+                            <li>Performed black-box testing of financial applications</li>
+                            <li>Automated testing using Selenium, improving efficiency by 45%</li>
+                            <li>Developed SQL tools saving effort by 25%</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>PHP</span>
+                            <span>JavaScript</span>
+                            <span>Selenium</span>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Credentials</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card featured">
+                    <div class="cert-icon">
+                        <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect" onerror="this.style.display='none'; this.parentElement.innerHTML='🏆';">
+                    </div>
+                    <h3>AWS Certified Solutions Architect</h3>
+                    <p>Associate Level</p>
+                    <span class="cert-badge">AWS</span>
+                </div>
+                <div class="cert-card featured">
+                    <div class="cert-icon">
+                        <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Cloud Practitioner" onerror="this.style.display='none'; this.parentElement.innerHTML='🏆';">
+                    </div>
+                    <h3>AWS Certified Cloud Practitioner</h3>
+                    <p>Foundational Level</p>
+                    <span class="cert-badge">AWS</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🤖</div>
+                    <h3>Google AI Essentials</h3>
+                    <p>Artificial Intelligence</p>
+                    <span class="cert-badge google">Google</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">💬</div>
+                    <h3>Google Prompting Essentials</h3>
+                    <p>Prompt Engineering</p>
+                    <span class="cert-badge google">Google</span>
+                </div>
+            </div>
+            <div class="education-section">
+                <h3 class="subsection-title">Education</h3>
+                <div class="education-grid">
+                    <div class="edu-card">
+                        <div class="edu-icon">🎓</div>
+                        <div class="edu-content">
+                            <h4>Master's Degree in Computer Science</h4>
+                            <p class="edu-school">The George Washington University</p>
+                            <p class="edu-focus">Information Systems Security / Information Assurance</p>
+                            <span class="edu-date">2017 - 2019</span>
+                        </div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-icon">🎓</div>
+                        <div class="edu-content">
+                            <h4>Bachelor of Technology (B.Tech)</h4>
+                            <p class="edu-school">Guru Gobind Singh Indraprastha University</p>
+                            <p class="edu-focus">Computer Science</p>
+                            <span class="edu-date">2010 - 2014</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Let's Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about DevOps and cloud infrastructure.</p>
+                    <div class="contact-terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">$</span> echo $EMAIL</p>
+                            <p class="output">mahakmalik91@gmail.com</p>
+                            <p><span class="prompt">$</span> echo $LOCATION</p>
+                            <p class="output">Washington, DC, USA</p>
+                            <p><span class="prompt">$</span> <span class="cursor">_</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:mahakmalik91@gmail.com" class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <p>mahakmalik91@gmail.com</p>
+                        </div>
+                        <span class="contact-arrow">→</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/malikmahak" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-info">
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/malikmahak</p>
+                        </div>
+                        <span class="contact-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/mahakmalik" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">🐙</div>
+                        <div class="contact-info">
+                            <h4>GitHub</h4>
+                            <p>github.com/mahakmalik</p>
+                        </div>
+                        <span class="contact-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <span class="code-comment">// Built with passion</span>
+                </p>
+                <p class="footer-copyright">
+                    © 2024 Mahak Malik. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
