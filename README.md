@@ -91,30 +91,4 @@ Replace the YAML code block in the About section with an image:
 <img src="your-photo.jpg" alt="Mahak Malik" class="profile-photo">
 ```
 
-## 🔧 Alternative Free Hosting Options
-
-### Netlify
-1. Go to [netlify.com](https://netlify.com)
-2. Drag & drop the project folder
-3. Get URL like `your-site.netlify.app`
-
-### Vercel
-1. Go to [vercel.com](https://vercel.com)
-2. Import from GitHub or upload
-3. Get URL like `your-site.vercel.app`
-
-### Cloudflare Pages
-1. Go to [pages.cloudflare.com](https://pages.cloudflare.com)
-2. Connect GitHub repo
-3. Get URL like `your-site.pages.dev`
-
----
-
-## 📝 License
-
-MIT License - Feel free to use and modify!
-
----
-
-Built with ❤️ for Mahak Malik
 
