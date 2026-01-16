@@ -67,7 +67,7 @@
             margin: 0 auto;
             font-size: 1.1rem;
             line-height: 1.7;
-            color: var(--text-secondary);
+            color: var(--text-primary);
         }
         
         .blog-post-article h2 {
@@ -76,6 +76,9 @@
             color: var(--text-primary);
             margin: 40px 0 20px;
             line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         
         .blog-post-article h3 {
@@ -87,6 +90,7 @@
         
         .blog-post-article p {
             margin-bottom: 20px;
+            color: var(--text-secondary);
         }
         
         .blog-post-article strong {
@@ -106,9 +110,20 @@
             margin: 30px 0;
             font-style: italic;
             color: var(--text-primary);
-            background: rgba(0, 212, 170, 0.05);
+            background: rgba(0, 212, 170, 0.1);
             padding: 20px 24px;
             border-radius: 8px;
+            position: relative;
+        }
+        
+        .blog-post-article blockquote::before {
+            content: '💡';
+            position: absolute;
+            top: 15px;
+            left: -8px;
+            font-size: 1.2rem;
+            background: var(--bg-primary);
+            padding: 4px;
         }
         
         .blog-post-tags {
@@ -232,20 +247,31 @@
     <!-- Blog Post Content -->
     <section class="blog-post-content">
         <div class="container">
+            <!-- Hero Visual -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 40px; max-width: 600px; margin: 0 auto;">
+                    <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-primary); line-height: 1.4;">
+                        📚 From Algorithms to AWS ☁️<br>
+                        🎓 University → 💼 Internship → 🚀 DevOps<br>
+                        <span style="color: var(--text-primary);">A journey of curiosity, growth, and systems thinking</span>
+                    </div>
+                </div>
+            </div>
+            
             <article class="blog-post-article">
-                <p>I wasn't the kid who coded in the basement. I didn't build rigs or write scripts before high school.</p>
+                <p>I wasn't the kid who coded in the basement. I didn't build rigs or write scripts before high school. 🖥️</p>
                 
                 <p>If you'd asked me in my early years what I wanted to be, technology was not the answer — it was just something that existed in the background, working quietly until it didn't.</p>
                 
-                <p>Looking back, the defining moments in my journey were never about early obsession or innate genius. They were about environment, challenge, and the people who helped me think more clearly.</p>
+                <p>Looking back, the defining moments in my journey were never about early obsession or innate genius. They were about environment, challenge, and the people who helped me think more clearly. ✨</p>
 
-                <h2>When Learning Actually Felt Hard — and Good</h2>
+                <h2>🎓 When Learning Actually Felt Hard — and Good</h2>
 
                 <p>During my master's at George Washington University, I found myself in classrooms where the questions mattered more than the answers.</p>
 
-                <p>One lecturer who reshaped how I approached problems was Yossef Abdou. In the early weeks of his assignments, my classmates and I could barely solve one problem out of ten. Our early test scores hovered around 40–50%, and honestly, it felt like we were flailing.</p>
+                <p>One lecturer who reshaped how I approached problems was <strong>Yossef Abdou</strong>. In the early weeks of his assignments, my classmates and I could barely solve one problem out of ten. Our early test scores hovered around 40–50%, and honestly, it felt like we were flailing. 📊</p>
 
-                <p>But Yossef had this way of connecting abstract ideas to real life — often with absurdly funny examples involving money or everyday situations — that somehow made concepts stick. Those jokes weren't distractions — they were bridges into true understanding.</p>
+                <p>But Yossef had this way of connecting abstract ideas to real life — often with absurdly funny examples involving money or everyday situations — that somehow made concepts stick. Those jokes weren't distractions — they were bridges into true understanding. 🌉</p>
 
                 <p>After weeks of struggle and laughter, something clicked:</p>
 
@@ -253,41 +279,41 @@
                     Algorithms stopped being lines on a page and became patterns of thought. That wasn't just a win in a class — it was the first time I realized I could learn how to think, not just memorize.
                 </blockquote>
 
-                <h2>My "I Can Do This" Moment</h2>
+                <h2>🚀 My "I Can Do This" Moment</h2>
 
                 <p>That shift wasn't merely academic. It showed up in the real world sooner than I expected.</p>
 
-                <p>During a summer internship at Leap Orbit, I walked into code I didn't understand, languages I'd never used (like C#), and a React application that felt completely alien. I'd never built anything like their stack before, and the fear wasn't just about learning a tool — it was the unsettling thought that someone was going to realize I knew nothing and shouldn't have been hired in the first place.</p>
+                <p>During a summer internship at <strong>Leap Orbit</strong>, I walked into code I didn't understand, languages I'd never used (like C#), and a React application that felt completely alien. I'd never built anything like their stack before, and the fear wasn't just about learning a tool — it was the unsettling thought that someone was going to realize I knew nothing and shouldn't have been hired in the first place. 😰</p>
 
-                <p>But over the course of that summer, something surprising happened: I didn't just learn the basics — I built something real. I created a comprehensive automated UI testing suite for their web application: end-to-end, practical, and actually used. That was the moment when I finally thought:</p>
+                <p>But over the course of that summer, something surprising happened: I didn't just learn the basics — I built something real. I created a comprehensive automated UI testing suite for their web application: end-to-end, practical, and actually used. That was the moment when I finally thought: 🎯</p>
 
                 <blockquote>
                     <strong>I can do this.</strong>
                 </blockquote>
 
-                <h2>Beyond Testing — Taking Initiative</h2>
+                <h2>🛠️ Beyond Testing — Taking Initiative</h2>
 
-                <p>Soon after, I joined EAB as an SDET. On paper, my job was focused on testing — but in practice, it became a path to systems thinking.</p>
+                <p>Soon after, I joined <strong>EAB</strong> as an SDET. On paper, my job was focused on testing — but in practice, it became a path to systems thinking.</p>
 
-                <p>I started bumping into cloud infrastructure and tooling that wasn't even part of my official role. Tools like AWS services looked complex at first, but what began as curiosity turned into small actions: fixing minor defects in AWS setups I encountered during testing and exploring how infrastructure fit together.</p>
+                <p>I started bumping into cloud infrastructure and tooling that wasn't even part of my official role. Tools like AWS services looked complex at first, but what began as curiosity turned into small actions: fixing minor defects in AWS setups I encountered during testing and exploring how infrastructure fit together. ☁️</p>
 
-                <p>That wasn't part of my job description — it was my choice. I found myself asking deeper questions: "Why does this behave this way?" "What happens if I change this?"</p>
+                <p>That wasn't part of my job description — it was my choice. I found myself asking deeper questions: "Why does this behave this way?" "What happens if I change this?" 🤔</p>
 
                 <p><em>That's the moment many engineers call ownership — and it's the heart of what DevOps truly feels like.</em></p>
 
-                <p>Then a DevOps engineer on the team left. Instead of seeing vacancy as someone else's problem, I asked my manager if I could transition into that space — and from that day on, I never looked back.</p>
+                <p>Then a DevOps engineer on the team left. Instead of seeing vacancy as someone else's problem, I asked my manager if I could transition into that space — and from that day on, I never looked back. 🔄</p>
 
-                <p>I was incredibly fortunate to have a manager like Julian, who didn't judge curiosity and gave me the space to grow into the role.</p>
+                <p>I was incredibly fortunate to have a manager like <strong>Julian</strong>, who didn't judge curiosity and gave me the space to grow into the role. 🙏</p>
 
-                <h2>How Personal Support Helped Shape My Thinking</h2>
+                <h2>👫 How Personal Support Helped Shape My Thinking</h2>
 
                 <p>And this journey wasn't lived in isolation.</p>
 
-                <p>In my personal life, I met my husband, <strong>Abhinav Mohanty</strong>, who had been interested in technology since childhood and has deep experience in security research and responsible AI.</p>
+                <p>In my personal life, I met my husband, <strong>Abhinav Mohanty</strong>, who had been interested in technology since childhood and has deep experience in security research and responsible AI. 💜</p>
 
-                <p>Ours wasn't a dynamic of "teacher and student." It was one of conversation and curiosity — talking through basics, asking "why this works like that," and discussing systems from different angles. Those discussions weren't always technical, but they helped me translate academic logic and internship experience into real-world intuition. Having someone who could answer foundational questions thoughtfully was a huge confidence booster and a steady companion to the messy, non-linear process of learning.</p>
+                <p>Ours wasn't a dynamic of "teacher and student." It was one of conversation and curiosity — talking through basics, asking "why this works like that," and discussing systems from different angles. Those discussions weren't always technical, but they helped me translate academic logic and internship experience into real-world intuition. Having someone who could answer foundational questions thoughtfully was a huge confidence booster and a steady companion to the messy, non-linear process of learning. 🗣️</p>
 
-                <h2>DevOps Is Not a Checklist — It's a Journey</h2>
+                <h2>🎯 DevOps Is Not a Checklist — It's a Journey</h2>
 
                 <p>If there's one thing I've learned, it's this:</p>
 
@@ -296,9 +322,9 @@
                     It's about embracing discomfort, asking questions others ignore, and building systems that survive failure.
                 </blockquote>
 
-                <p>Most guides you'll see focus on toolchains — Docker, Kubernetes, Terraform — and while knowing them matters, it's not what makes someone great at DevOps. What matters is the ability to understand systems, navigate uncertainty, and figure things out when nothing makes sense at first.</p>
+                <p>Most guides you'll see focus on toolchains — Docker 🐳, Kubernetes ⚙️, Terraform 🏗️ — and while knowing them matters, it's not what makes someone great at DevOps. What matters is the ability to understand systems, navigate uncertainty, and figure things out when nothing makes sense at first.</p>
 
-                <p>That's the lesson my professors, my work experience, and the people in my life helped teach me.</p>
+                <p>That's the lesson my professors, my work experience, and the people in my life helped teach me. 🌟</p>
             </article>
         </div>
     </section>
