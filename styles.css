@@ -1337,3 +1337,304 @@ section {
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
 
+/* ===================================
+   BLOG SECTION
+   =================================== */
+.blog {
+    background: var(--bg-primary);
+}
+
+.blog-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.blog-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.blog-lead {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.blog-text p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.blog-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.blog-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.blog-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    background: rgba(0, 212, 170, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.blog-icon {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blog-info h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.blog-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.blog-arrow {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: var(--accent-primary);
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+.blog-card:hover .blog-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.blog-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    transition: var(--transition-normal);
+}
+
+.category-item:hover {
+    border-color: var(--border-color);
+    transform: translateY(-3px);
+}
+
+.category-icon {
+    font-size: 2rem;
+}
+
+.category-content h4 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.category-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ===================================
+   EXTRACURRICULAR SECTION
+   =================================== */
+.extracurricular {
+    background: var(--bg-secondary);
+}
+
+.extracurricular-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 1200px) {
+    .extracurricular-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.activity-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 30px;
+    transition: var(--transition-normal);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-card:hover {
+    border-color: var(--border-color);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.activity-card.featured {
+    border-color: var(--border-color);
+    background: linear-gradient(135deg, var(--bg-card), rgba(0, 212, 170, 0.05));
+}
+
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.activity-icon {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.activity-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.activity-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activity-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 4px;
+}
+
+.stat-item .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.activity-links {
+    margin-top: auto;
+}
+
+.activity-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.activity-link:hover {
+    background: rgba(0, 212, 170, 0.2);
+    transform: translateY(-2px);
+}
+
+.activity-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.activity-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--accent-primary);
+}
+
+/* ===================================
+   RESPONSIVE STYLES FOR NEW SECTIONS
+   =================================== */
+@media (max-width: 1024px) {
+    .extracurricular-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .blog-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .extracurricular-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .activity-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+

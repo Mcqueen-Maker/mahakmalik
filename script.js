@@ -81,7 +81,8 @@ function initScrollAnimations() {
     // Observe elements
     const animatedElements = document.querySelectorAll(
         '.section-header, .about-content, .skill-category, .timeline-item, ' +
-        '.cert-card, .edu-card, .contact-content, .tools-cloud'
+        '.cert-card, .edu-card, .contact-content, .tools-cloud, ' +
+        '.blog-content, .blog-card, .category-item, .activity-card'
     );
     
     animatedElements.forEach((el, index) => {
