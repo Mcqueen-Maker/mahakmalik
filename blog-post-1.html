@@ -90,7 +90,7 @@
         
         .blog-post-article p {
             margin-bottom: 20px;
-            color: var(--text-secondary);
+            color: var(--text-primary);
         }
         
         .blog-post-article strong {
@@ -124,6 +124,32 @@
             font-size: 1.2rem;
             background: var(--bg-primary);
             padding: 4px;
+        }
+        
+        /* Force proper text colors for readability */
+        .blog-post-article * {
+            color: inherit;
+        }
+        
+        .blog-post-summary {
+            color: var(--text-primary) !important;
+        }
+        
+        /* Specific overrides for better readability */
+        .blog-post-article p,
+        .blog-post-article li,
+        .blog-post-content p {
+            color: #e6edf3 !important;
+        }
+        
+        .blog-post-article h1,
+        .blog-post-article h2,
+        .blog-post-article h3 {
+            color: #e6edf3 !important;
+        }
+        
+        .blog-post-summary {
+            color: #e6edf3 !important;
         }
         
         .blog-post-tags {
