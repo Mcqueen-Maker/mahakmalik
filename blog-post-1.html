@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I Didn't Grow Up With Computers — I Grew Into DevOps | Mahak Malik's journey from non-technical background to DevOps expertise">
+    <title>I Didn't Grow Up With Computers — I Grew Into DevOps | Mahak Malik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-post-header {
+            background: var(--bg-secondary);
+            padding: 120px 0 60px;
+        }
+        
+        .blog-post-nav {
+            margin-bottom: 40px;
+        }
+        
+        .blog-post-nav a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-fast);
+        }
+        
+        .blog-post-nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .blog-post-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-summary {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .blog-post-content {
+            background: var(--bg-primary);
+            padding: 80px 0;
+        }
+        
+        .blog-post-article {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        
+        .blog-post-article h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 40px 0 20px;
+            line-height: 1.3;
+        }
+        
+        .blog-post-article h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin: 30px 0 15px;
+        }
+        
+        .blog-post-article p {
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-article strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .blog-post-article em {
+            color: var(--accent-primary);
+            font-style: normal;
+            font-weight: 500;
+        }
+        
+        .blog-post-article blockquote {
+            border-left: 3px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--text-primary);
+            background: rgba(0, 212, 170, 0.05);
+            padding: 20px 24px;
+            border-radius: 8px;
+        }
+        
+        .blog-post-tags {
+            background: var(--bg-secondary);
+            padding: 40px 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+        
+        .blog-post-tags h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--accent-primary);
+        }
+        
+        .blog-post-footer {
+            background: var(--bg-primary);
+            padding: 60px 0;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+        }
+        
+        .back-to-blog a {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+        
+        .back-to-blog a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px var(--accent-glow);
+        }
+
+        @media (max-width: 768px) {
+            .blog-post-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">MM</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="index.html#extracurricular" class="nav-link">Extracurricular</a></li>
+                <li><a href="index.html#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post Header -->
+    <section class="blog-post-header">
+        <div class="container">
+            <div class="blog-post-nav">
+                <a href="index.html#blog">← Back to Blog</a>
+            </div>
+            <div class="blog-post-meta">
+                <span>January 16, 2026</span>
+                <span>•</span>
+                <span>8 min read</span>
+                <span>•</span>
+                <span>Personal Journey</span>
+            </div>
+            <h1 class="blog-post-title">I Didn't Grow Up With Computers — I Grew Into DevOps</h1>
+            <p class="blog-post-summary">
+                My journey into DevOps wasn't driven by childhood passion for technology. Instead, it was shaped by environment, challenges, and the people who helped me think differently about systems and problem-solving.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-content">
+        <div class="container">
+            <article class="blog-post-article">
+                <p>I wasn't the kid who coded in the basement. I didn't build rigs or write scripts before high school.</p>
+                
+                <p>If you'd asked me in my early years what I wanted to be, technology was not the answer — it was just something that existed in the background, working quietly until it didn't.</p>
+                
+                <p>Looking back, the defining moments in my journey were never about early obsession or innate genius. They were about environment, challenge, and the people who helped me think more clearly.</p>
+
+                <h2>When Learning Actually Felt Hard — and Good</h2>
+
+                <p>During my master's at George Washington University, I found myself in classrooms where the questions mattered more than the answers.</p>
+
+                <p>One lecturer who reshaped how I approached problems was Yossef Abdou. In the early weeks of his assignments, my classmates and I could barely solve one problem out of ten. Our early test scores hovered around 40–50%, and honestly, it felt like we were flailing.</p>
+
+                <p>But Yossef had this way of connecting abstract ideas to real life — often with absurdly funny examples involving money or everyday situations — that somehow made concepts stick. Those jokes weren't distractions — they were bridges into true understanding.</p>
+
+                <p>After weeks of struggle and laughter, something clicked:</p>
+
+                <blockquote>
+                    Algorithms stopped being lines on a page and became patterns of thought. That wasn't just a win in a class — it was the first time I realized I could learn how to think, not just memorize.
+                </blockquote>
+
+                <h2>My "I Can Do This" Moment</h2>
+
+                <p>That shift wasn't merely academic. It showed up in the real world sooner than I expected.</p>
+
+                <p>During a summer internship at Leap Orbit, I walked into code I didn't understand, languages I'd never used (like C#), and a React application that felt completely alien. I'd never built anything like their stack before, and the fear wasn't just about learning a tool — it was the unsettling thought that someone was going to realize I knew nothing and shouldn't have been hired in the first place.</p>
+
+                <p>But over the course of that summer, something surprising happened: I didn't just learn the basics — I built something real. I created a comprehensive automated UI testing suite for their web application: end-to-end, practical, and actually used. That was the moment when I finally thought:</p>
+
+                <blockquote>
+                    <strong>I can do this.</strong>
+                </blockquote>
+
+                <h2>Beyond Testing — Taking Initiative</h2>
+
+                <p>Soon after, I joined EAB as an SDET. On paper, my job was focused on testing — but in practice, it became a path to systems thinking.</p>
+
+                <p>I started bumping into cloud infrastructure and tooling that wasn't even part of my official role. Tools like AWS services looked complex at first, but what began as curiosity turned into small actions: fixing minor defects in AWS setups I encountered during testing and exploring how infrastructure fit together.</p>
+
+                <p>That wasn't part of my job description — it was my choice. I found myself asking deeper questions: "Why does this behave this way?" "What happens if I change this?"</p>
+
+                <p><em>That's the moment many engineers call ownership — and it's the heart of what DevOps truly feels like.</em></p>
+
+                <p>Then a DevOps engineer on the team left. Instead of seeing vacancy as someone else's problem, I asked my manager if I could transition into that space — and from that day on, I never looked back.</p>
+
+                <p>I was incredibly fortunate to have a manager like Julian, who didn't judge curiosity and gave me the space to grow into the role.</p>
+
+                <h2>How Personal Support Helped Shape My Thinking</h2>
+
+                <p>And this journey wasn't lived in isolation.</p>
+
+                <p>In my personal life, I met my husband, <strong>Abhinav Mohanty</strong>, who had been interested in technology since childhood and has deep experience in security research and responsible AI.</p>
+
+                <p>Ours wasn't a dynamic of "teacher and student." It was one of conversation and curiosity — talking through basics, asking "why this works like that," and discussing systems from different angles. Those discussions weren't always technical, but they helped me translate academic logic and internship experience into real-world intuition. Having someone who could answer foundational questions thoughtfully was a huge confidence booster and a steady companion to the messy, non-linear process of learning.</p>
+
+                <h2>DevOps Is Not a Checklist — It's a Journey</h2>
+
+                <p>If there's one thing I've learned, it's this:</p>
+
+                <blockquote>
+                    <strong>DevOps isn't about tools. It's about thinking.</strong><br>
+                    It's about embracing discomfort, asking questions others ignore, and building systems that survive failure.
+                </blockquote>
+
+                <p>Most guides you'll see focus on toolchains — Docker, Kubernetes, Terraform — and while knowing them matters, it's not what makes someone great at DevOps. What matters is the ability to understand systems, navigate uncertainty, and figure things out when nothing makes sense at first.</p>
+
+                <p>That's the lesson my professors, my work experience, and the people in my life helped teach me.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Tags Section -->
+    <section class="blog-post-tags">
+        <div class="container">
+            <h3>Tags</h3>
+            <div class="tags-list">
+                <span class="tag">DevOps Journey</span>
+                <span class="tag">Career Growth</span>
+                <span class="tag">Personal Story</span>
+                <span class="tag">Learning</span>
+                <span class="tag">Systems Thinking</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Professional Development</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Footer -->
+    <section class="blog-post-footer">
+        <div class="container">
+            <div class="back-to-blog">
+                <a href="index.html#blog">
+                    <span>←</span>
+                    <span>Back to All Posts</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <span class="code-comment">// Built with passion</span>
+                </p>
+                <p class="footer-copyright">
+                    © 2026 Mahak Malik. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
