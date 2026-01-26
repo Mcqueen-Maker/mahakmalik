@@ -307,13 +307,24 @@
                 <h2 class="newsletter-title">📬 Stay Updated</h2>
                 <p class="newsletter-subtitle">
                     Get notified when I publish new DevOps insights, tutorials, and technical articles.
-                    Subscribe via RSS for instant updates, or follow along on social media.
+                    Choose RSS for instant updates or email for weekly digests.
                 </p>
                 <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 20px;">
                     <a href="https://rss.app/feeds/Wf9KAZNuqSI7CnCI.xml" class="rss-link" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-family: var(--font-mono); font-size: 0.9rem; transition: var(--transition-fast);">
                         <span>🔔</span>
                         <span>Subscribe via RSS</span>
                     </a>
+                    <button onclick="showEmailForm()" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--gradient-primary); color: var(--bg-primary); border: none; border-radius: 8px; font-family: var(--font-mono); font-size: 0.9rem; cursor: pointer; transition: var(--transition-normal);">
+                        <span>📧</span>
+                        <span>Email Newsletter</span>
+                    </button>
+                </div>
+                <div id="email-form" style="display: none; margin-top: 20px;">
+                    <form onsubmit="handleSubscribe(event)" style="display: flex; gap: 12px; max-width: 400px; margin: 0 auto;">
+                        <input type="email" id="email-input" placeholder="Enter your email" required style="flex: 1; padding: 12px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); font-family: var(--font-mono);">
+                        <button type="submit" style="padding: 12px 20px; background: var(--accent-primary); color: var(--bg-primary); border: none; border-radius: 8px; font-family: var(--font-mono); cursor: pointer;">Subscribe</button>
+                    </form>
+                    <p id="thank-you" style="display: none; color: var(--accent-primary); margin-top: 10px; font-family: var(--font-mono);">Thank you for subscribing! You'll hear from me soon.</p>
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
                     Or get updates via email (coming soon) or social media.

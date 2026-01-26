@@ -288,6 +288,36 @@ preloadImages();
 // ===================================
 // CONSOLE EASTER EGG
 // ===================================
+// NEWSLETTER SUBSCRIPTION
+// ===================================
+function showEmailForm() {
+    const form = document.getElementById('email-form');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+}
+
+function handleSubscribe(event) {
+    event.preventDefault();
+    const email = document.getElementById('email-input').value;
+    const thankYou = document.getElementById('thank-you');
+    
+    // Simple validation
+    if (email) {
+        // Hide form and show thank you
+        document.getElementById('email-form').style.display = 'none';
+        thankYou.style.display = 'block';
+        
+        // Here you would normally send to your email service
+        console.log('Email subscribed:', email);
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+            thankYou.style.display = 'none';
+            document.getElementById('email-input').value = '';
+        }, 3000);
+    }
+}
+
+// ===================================
 console.log('%c👋 Hey there, fellow developer!', 'font-size: 20px; font-weight: bold; color: #00d4aa;');
 console.log('%c Thanks for checking out my portfolio.', 'font-size: 14px; color: #8b949e;');
 console.log('%c Let\'s connect: linkedin.com/in/malikmahak', 'font-size: 12px; color: #58a6ff;');
