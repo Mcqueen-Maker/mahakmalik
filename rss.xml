@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Mahak Malik - DevOps Blog</title>
+    <description>Sharing insights, experiences, and technical knowledge from my journey in DevOps, cloud infrastructure, and automation.</description>
+    <link>https://mcqueen-maker.github.io/mahakmalik/blog.html</link>
+    <atom:link href="https://mcqueen-maker.github.io/mahakmalik/rss.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jan 2026 12:00:00 GMT</lastBuildDate>
+    <generator>Static Site</generator>
+
+    <item>
+        <title>Why I Always Read Official Documentation (Even When AI Says "Trust Me, Bro")</title>
+        <description>Trust AI for speed — but trust the official documentation for truth. A practical note on why starting with the docs saves time and prevents weird bugs.</description>
+        <link>https://mcqueen-maker.github.io/mahakmalik/blog-post-2.html</link>
+        <guid>https://mcqueen-maker.github.io/mahakmalik/blog-post-2.html</guid>
+        <pubDate>Sat, 23 Jan 2026 12:00:00 GMT</pubDate>
+        <category>DevOps</category>
+        <category>Documentation</category>
+        <category>AI</category>
+    </item>
+
+    <item>
+        <title>I Didn't Grow Up With Computers — I Grew Into DevOps</title>
+        <description>My journey into DevOps wasn't driven by childhood passion for technology. Instead, it was shaped by environment, challenges, and the people who helped me think differently about systems and problem-solving.</description>
+        <link>https://mcqueen-maker.github.io/mahakmalik/blog-post-1.html</link>
+        <guid>https://mcqueen-maker.github.io/mahakmalik/blog-post-1.html</guid>
+        <pubDate>Sat, 16 Jan 2026 12:00:00 GMT</pubDate>
+        <category>DevOps Journey</category>
+        <category>Career Growth</category>
+        <category>Personal Story</category>
+    </item>
+</channel>
+</rss>
