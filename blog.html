@@ -117,6 +117,80 @@
         .blog-post-card:hover .read-more-arrow {
             transform: translateX(4px);
         }
+
+        /* Newsletter Subscribe Section */
+        .newsletter-section {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        
+        .newsletter-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+        }
+        
+        .newsletter-form button {
+            padding: 14px 24px;
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--accent-glow);
+        }
+        
+        @media (max-width: 768px) {
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -221,6 +295,23 @@
                     <span style="font-size: 2rem; display: block; margin-bottom: 16px;">🚀</span>
                     <p>More technical articles and DevOps tutorials coming soon!</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscribe Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <h2 class="newsletter-title">📬 Stay Updated</h2>
+                <p class="newsletter-subtitle">
+                    Get notified when I publish new DevOps insights, tutorials, and technical articles.
+                    No spam, just quality content delivered to your inbox.
+                </p>
+                <form class="newsletter-form" action="#" method="POST">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
