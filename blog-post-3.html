@@ -400,7 +400,7 @@
                 
                 <p>And weirdly enough — that's when Kubernetes stopped feeling scary.</p>
 
-                <h2>🤔 "Okay, but what is Kubernetes really?"</h2>
+                <h2>"Okay, but what is Kubernetes really?"</h2>
 
                 <p>When I first read the Kubernetes docs, I realized something important: Kubernetes is not a tool you run commands on. It's a system that constantly asks one question:</p>
                 
@@ -462,7 +462,7 @@
                 
                 <p>You describe what you want. Kubernetes figures out how to keep it true. This is peak DevOps energy.</p>
 
-                <h2>🚀 Why Kubernetes matters for DevOps (the real reason)</h2>
+                <h2>Why Kubernetes matters for DevOps (the real reason)</h2>
 
                 <p>Kubernetes isn't popular because it's trendy.</p>
                 
@@ -489,11 +489,10 @@
                     <li>"The system already fixed it — here's the log."</li>
                 </ul>
 
-                <h2>☁️ Why I learned Kubernetes through EKS</h2>
+                <h2> Why I learned Kubernetes through EKS</h2>
 
-                <p>After the concepts clicked, I didn't spin up a tiny local cluster just for practice. I went straight to Amazon Elastic Kubernetes Service — because that's what I actually use at work.</p>
+                <p>After the concepts clicked, I went to Amazon Elastic Kubernetes Service — because that's what I actually use at work.</p>
                 
-                <p>I didn't want to learn Kubernetes in theory. I wanted to learn it where I'd be responsible for it.</p>
                 
                 <p>EKS handles:</p>
                 
@@ -514,7 +513,7 @@
                 
                 <p>Very DevOps-aligned.</p>
 
-                <h2>🧪 The Lab: "Okay, let's actually do this"</h2>
+                <h2>The Lab: "Okay, let's actually do this"</h2>
 
                 <p>I followed a hands-on lab where the goal was simple: Deploy a web app on EKS and break it on purpose. Honestly? Perfect learning setup.</p>
 
@@ -522,46 +521,143 @@
 
                 <p>Before touching Kubernetes, you create an admin IAM user. This immediately reminded me: Kubernetes doesn't replace cloud security — it builds on it.</p>
 
+                <div style="margin: 30px 0; text-align: center;">
+                    <img src="images/blog-post-3/Iam-role-1.png" alt="IAM Role Creation" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
+
                 <h3>Step 2: An EC2 "admin" machine</h3>
 
                 <p>You launch an EC2 instance that becomes your control point. This is where kubectl, eksctl, and AWS CLI all live together and start making sense.</p>
 
+                <div style="margin: 30px 0; text-align: center;">
+                    <img src="images/blog-post-3/ec2-admin-launch.png" alt="EC2 Admin Instance Launch" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
+
                 <h3>Step 3: Tooling setup (the ritual)</h3>
 
-                <p>Installing kubectl and eksctl felt like a rite of passage. Once <code>eksctl version</code> worked, I knew I was officially allowed to proceed.</p>
+                <p>Installing kubectl and eksctl felt like a rite of passage. Once the tools are installed, you verify them:</p>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 8px; margin: 20px 0; font-family: var(--font-mono); overflow-x: auto; font-size: 0.9rem; color: var(--accent-primary);">
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Verify kubectl installation:</p>
+                    <code>$ kubectl version --client</code><br>
+                    <code>$ kubectl version --short</code><br><br>
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Verify eksctl installation:</p>
+                    <code>$ eksctl version</code><br><br>
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Verify AWS CLI:</p>
+                    <code>$ aws --version</code>
+                </div>
+
+                <div style="margin: 30px 0; text-align: center;">
+                    <img src="images/blog-post-3/kubectl-command.png" alt="kubectl Version Command" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
 
                 <h3>Step 4: Creating the cluster (the fun command)</h3>
+
+                <p>This single command created a Kubernetes cluster with everything configured:</p>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 8px; margin: 20px 0; font-family: var(--font-mono); overflow-x: auto; font-size: 0.9rem; color: var(--accent-primary);">
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Create EKS cluster:</p>
+                    <code>$ eksctl create cluster \<br>
+                    &nbsp;&nbsp;--name my-k8s-cluster \<br>
+                    &nbsp;&nbsp;--version 1.27 \<br>
+                    &nbsp;&nbsp;--region us-east-1 \<br>
+                    &nbsp;&nbsp;--nodegroup-name my-nodes \<br>
+                    &nbsp;&nbsp;--node-type t3.medium \<br>
+                    &nbsp;&nbsp;--nodes 2 \<br>
+                    &nbsp;&nbsp;--nodes-min 1 \<br>
+                    &nbsp;&nbsp;--nodes-max 3</code>
+                </div>
 
                 <p>This single command created:</p>
                 
                 <ul>
                     <li>a Kubernetes control plane</li>
-                    <li>worker nodes</li>
-                    <li>networking</li>
-                    <li>autoscaling</li>
+                    <li>worker nodes (2 nodes in this case)</li>
+                    <li>networking infrastructure</li>
+                    <li>autoscaling group (1-3 nodes)</li>
                 </ul>
                 
                 <p>I didn't memorize what it did. I read it. Then watched AWS build it. Much better.</p>
 
                 <h3>Step 5: Deploying the app</h3>
 
-                <p>This is where theory met reality. I applied a YAML file that:</p>
-                
-                <ul>
-                    <li>created a Deployment with two replicas</li>
-                    <li>exposed it using a LoadBalancer Service</li>
-                </ul>
-                
-                <p>When the load balancer DNS returned the app response, I genuinely smiled.</p>
+                <p>This is where theory met reality. First, verify the cluster was created successfully:</p>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 8px; margin: 20px 0; font-family: var(--font-mono); overflow-x: auto; font-size: 0.9rem; color: var(--accent-primary);">
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Check cluster status:</p>
+                    <code>$ eksctl get cluster</code><br>
+                    <code>$ kubectl get nodes</code><br>
+                    <code>$ kubectl get namespaces</code>
+                </div>
+
+                <p>Then I applied a YAML manifest that created a complete deployment:</p>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 8px; margin: 20px 0; font-family: var(--font-mono); overflow-x: auto; font-size: 0.85rem; color: var(--accent-primary);">
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Sample YAML deployment (app.yaml):</p>
+                    <code>apiVersion: apps/v1<br>
+                    kind: Deployment<br>
+                    metadata:<br>
+                    &nbsp;&nbsp;name: nginx-app<br>
+                    spec:<br>
+                    &nbsp;&nbsp;replicas: 2<br>
+                    &nbsp;&nbsp;selector:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;matchLabels:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app: nginx<br>
+                    &nbsp;&nbsp;template:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;metadata:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labels:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app: nginx<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;spec:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;containers:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: nginx<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image: nginx:latest<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ports:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- containerPort: 80<br>
+                    ---<br>
+                    apiVersion: v1<br>
+                    kind: Service<br>
+                    metadata:<br>
+                    &nbsp;&nbsp;name: nginx-service<br>
+                    spec:<br>
+                    &nbsp;&nbsp;type: LoadBalancer<br>
+                    &nbsp;&nbsp;selector:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;app: nginx<br>
+                    &nbsp;&nbsp;ports:<br>
+                    &nbsp;&nbsp;- protocol: TCP<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;port: 80<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;targetPort: 80</code>
+                </div>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 8px; margin: 20px 0; font-family: var(--font-mono); overflow-x: auto; font-size: 0.9rem; color: var(--accent-primary);">
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Apply and verify deployment:</p>
+                    <code>$ kubectl apply -f app.yaml</code><br>
+                    <code>$ kubectl get deployments</code><br>
+                    <code>$ kubectl get pods</code><br>
+                    <code>$ kubectl get svc</code><br>
+                    <code>$ kubectl describe svc nginx-service</code>
+                </div>
+
+                <p>You can paste the LoadBalancer external-ip in your browser and it should display the web app. When the load balancer DNS returned the app response, I genuinely smiled.</p>
 
                 <h3>Step 6: Breaking things on purpose</h3>
 
-                <p>Then came my favorite part. I terminated both worker nodes manually.</p>
-                
+                <p>Then came my favorite part. I terminated both worker nodes manually to test the self-healing capability:</p>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 8px; margin: 20px 0; font-family: var(--font-mono); overflow-x: auto; font-size: 0.9rem; color: var(--accent-primary);">
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Get node names and terminate them:</p>
+                    <code>$ kubectl get nodes</code><br>
+                    <code>$ kubectl delete node &lt;node-name-1&gt;</code><br>
+                    <code>$ kubectl delete node &lt;node-name-2&gt;</code><br><br>
+                    <p style="color: var(--text-primary); margin-bottom: 10px; font-weight: 600;">Watch Kubernetes automatically replace them:</p>
+                    <code>$ kubectl get nodes -w</code><br>
+                    <code>$ kubectl get pods</code><br>
+                    <code>$ kubectl get events --sort-by='.lastTimestamp'</code>
+                </div>
+
                 <p>And Kubernetes just… fixed it.</p>
                 
-                <p>New nodes came up. Pods rescheduled. Service kept working.</p>
-                
+                <p>New nodes came up automatically. Pods were rescheduled to the new nodes. Service kept working without any interruption.</p>
+
                 <p>This is when Kubernetes stopped being "concepts" and became trustworthy.</p>
 
                 <h2>💡 What I actually learned</h2>
