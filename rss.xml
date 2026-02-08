@@ -6,8 +6,20 @@
     <link>https://mcqueen-maker.github.io/mahakmalik/blog.html</link>
     <atom:link href="https://mcqueen-maker.github.io/mahakmalik/rss.xml" rel="self" type="application/rss+xml" />
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jan 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 8 Feb 2026 12:00:00 GMT</lastBuildDate>
     <generator>Static Site</generator>
+
+    <item>
+        <title>Learning Kubernetes the Practical Way: Concepts First, Then EKS</title>
+        <description>How I overcame Kubernetes intimidation by starting with the official documentation, understanding core concepts first, then diving into hands-on EKS deployment and failure testing.</description>
+        <link>https://mcqueen-maker.github.io/mahakmalik/blog-post-3.html</link>
+        <guid>https://mcqueen-maker.github.io/mahakmalik/blog-post-3.html</guid>
+        <pubDate>Sat, 8 Feb 2026 12:00:00 GMT</pubDate>
+        <category>Kubernetes</category>
+        <category>EKS</category>
+        <category>AWS</category>
+        <category>DevOps</category>
+    </item>
 
     <item>
         <title>Why I Always Read Official Documentation (Even When AI Says "Trust Me, Bro")</title>

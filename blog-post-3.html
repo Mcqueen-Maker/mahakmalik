@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning Kubernetes the Practical Way: Concepts First, Then EKS | Mahak Malik's hands-on guide to understanding Kubernetes fundamentals">
+    <title>Learning Kubernetes the Practical Way: Concepts First, Then EKS | Mahak Malik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-post-header {
+            background: var(--bg-secondary);
+            padding: 120px 0 60px;
+        }
+        
+        .blog-post-nav {
+            margin-bottom: 40px;
+        }
+        
+        .blog-post-nav a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-fast);
+        }
+        
+        .blog-post-nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .blog-post-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-summary {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .blog-post-content {
+            background: var(--bg-primary);
+            padding: 80px 0;
+        }
+        
+        .blog-post-article {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        
+        .blog-post-article h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 40px 0 20px;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .blog-post-article h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 30px 0 16px;
+            line-height: 1.3;
+        }
+        
+        .blog-post-article p {
+            margin-bottom: 20px;
+        }
+        
+        .blog-post-article ul,
+        .blog-post-article ol {
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        
+        .blog-post-article li {
+            margin-bottom: 10px;
+        }
+        
+        .blog-post-article blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .blog-post-article strong {
+            color: var(--accent-primary);
+        }
+        
+        .blog-post-article em {
+            color: var(--text-secondary);
+        }
+        
+        .blog-post-article li,
+        .blog-post-content p {
+            color: #e6edf3 !important;
+        }
+        
+        .blog-post-article h1,
+        .blog-post-article h2,
+        .blog-post-article h3 {
+            color: #e6edf3 !important;
+        }
+        
+        .blog-post-summary {
+            color: #e6edf3 !important;
+        }
+        
+        .blog-post-tags {
+            background: var(--bg-secondary);
+            padding: 40px 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+        
+        .blog-post-tags h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--accent-primary);
+        }
+        
+        .blog-post-footer {
+            background: var(--bg-primary);
+            padding: 60px 0;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+        }
+        
+        .back-to-blog a {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+        
+        .back-to-blog a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--accent-glow);
+        }
+        
+        .rss-subscribe {
+            display: inline-block;
+            margin-left: 16px;
+            padding: 16px 32px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            text-decoration: none;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+        
+        .rss-subscribe:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+        }
+        
+        .comments-section {
+            background: var(--bg-secondary);
+            padding: 60px 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+        
+        .comments-header {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .comments-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        
+        .comments-header p {
+            color: var(--text-secondary);
+        }
+        
+        .comment-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--gradient-primary);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--accent-glow);
+        }
+        
+        .existing-comments {
+            margin-top: 40px;
+        }
+        
+        .comment {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 8px;
+        }
+        
+        .comment-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        
+        .comment-message {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">MM</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="index.html#extracurricular" class="nav-link">Extracurricular</a></li>
+                <li><a href="index.html#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="index.html#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post Header -->
+    <section class="blog-post-header">
+        <div class="container">
+            <div class="blog-post-nav">
+                <a href="blog.html">← Back to Blog</a>
+            </div>
+            <div class="blog-post-meta">
+                <span>February 8, 2026</span>
+                <span>•</span>
+                <span>12 min read</span>
+                <span>•</span>
+                <span>Kubernetes</span>
+            </div>
+            <h1 class="blog-post-title">Learning Kubernetes the Practical Way: Concepts First, Then EKS</h1>
+            <p class="blog-post-summary">
+                How I overcame Kubernetes intimidation by starting with the official documentation, understanding core concepts first, then diving into hands-on EKS deployment and failure testing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-content">
+        <div class="container">
+            <article class="blog-post-article">
+                <p>I'll be honest: Kubernetes had been intimidating me for a while.</p>
+                
+                <p>Not because I didn't want to learn it — but because every Kubernetes tutorial on the internet somehow starts with,</p>
+                
+                <blockquote>
+                    "Assuming you already know Kubernetes…"
+                </blockquote>
+                
+                <p>Cool. Love that for me.</p>
+                
+                <p>So this time, I decided to do something boring but effective: I opened the official documentation and started from the very beginning. No shortcuts. No "just deploy this YAML and trust me." Just understanding what the system is actually made of.</p>
+                
+                <p>And weirdly enough — that's when Kubernetes stopped feeling scary.</p>
+
+                <h2>🤔 "Okay, but what is Kubernetes really?"</h2>
+
+                <p>When I first read the Kubernetes docs, I realized something important: Kubernetes is not a tool you run commands on. It's a system that constantly asks one question:</p>
+                
+                <blockquote>
+                    "Is the cluster in the state it's supposed to be?"
+                </blockquote>
+                
+                <p>That's it. That's the whole philosophy.</p>
+                
+                <p>At a high level (straight from the docs), Kubernetes is made up of two big parts:</p>
+                
+                <ul>
+                    <li><strong>a control plane</strong> (the brain)</li>
+                    <li><strong>worker nodes</strong> (the muscle)</li>
+                </ul>
+                
+                <p>Once that mental model landed, everything else started stacking nicely.</p>
+
+                <h2>🧠 The Control Plane: the overthinker (in a good way)</h2>
+
+                <p>The control plane doesn't run your app. It just worries about it. Constantly.</p>
+                
+                <p>It includes:</p>
+                
+                <ul>
+                    <li><strong>an API server</strong> (everything goes through this)</li>
+                    <li><strong>a datastore</strong> that remembers the desired state</li>
+                    <li><strong>schedulers and controllers</strong> that keep checking: "Are we good? No? Fixing it."</li>
+                </ul>
+                
+                <p>As a DevOps engineer, this felt familiar. This is automation with anxiety — and I mean that as a compliment.</p>
+
+                <h2>💪 Worker Nodes: where things actually happen</h2>
+
+                <p>Worker nodes are simpler. They:</p>
+                
+                <ul>
+                    <li>run containers</li>
+                    <li>follow instructions</li>
+                    <li>report back</li>
+                </ul>
+                
+                <p>If a node disappears? Kubernetes shrugs and moves on. If a pod dies? Kubernetes replaces it like nothing happened.</p>
+                
+                <p>This is where the "self-healing" reputation actually makes sense — not as magic, but as design.</p>
+
+                <h2>📋 Pods, Deployments, Services (aka: why YAML exists)</h2>
+
+                <p>One of the biggest mindset shifts for me was this:</p>
+                
+                <p><em>You don't deploy containers. You deploy pods — and you usually don't even manage those directly.</em></p>
+                
+                <p>Instead:</p>
+                
+                <ul>
+                    <li><strong>Deployments</strong> say how many pods you want</li>
+                    <li><strong>Services</strong> say how traffic reaches them</li>
+                </ul>
+                
+                <p>You describe what you want. Kubernetes figures out how to keep it true. This is peak DevOps energy.</p>
+
+                <h2>🚀 Why Kubernetes matters for DevOps (the real reason)</h2>
+
+                <p>Kubernetes isn't popular because it's trendy.</p>
+                
+                <p>It's popular because:</p>
+                
+                <ul>
+                    <li>servers fail</li>
+                    <li>pods crash</li>
+                    <li>traffic spikes</li>
+                    <li>humans forget things</li>
+                </ul>
+                
+                <p>Kubernetes assumes failure will happen and builds recovery into the system. For DevOps, that's huge.</p>
+                
+                <p>It moves you from:</p>
+                
+                <ul>
+                    <li>"Let me fix this at 3 AM"</li>
+                </ul>
+                
+                <p>to:</p>
+                
+                <ul>
+                    <li>"The system already fixed it — here's the log."</li>
+                </ul>
+
+                <h2>☁️ Why I learned Kubernetes through EKS</h2>
+
+                <p>After the concepts clicked, I didn't spin up a tiny local cluster just for practice. I went straight to Amazon Elastic Kubernetes Service — because that's what I actually use at work.</p>
+                
+                <p>I didn't want to learn Kubernetes in theory. I wanted to learn it where I'd be responsible for it.</p>
+                
+                <p>EKS handles:</p>
+                
+                <ul>
+                    <li>control plane availability</li>
+                    <li>upgrades</li>
+                    <li>scaling the boring (and risky) parts</li>
+                </ul>
+                
+                <p>Which meant I could focus on:</p>
+                
+                <ul>
+                    <li>clusters</li>
+                    <li>nodes</li>
+                    <li>deployments</li>
+                    <li>behavior under failure</li>
+                </ul>
+                
+                <p>Very DevOps-aligned.</p>
+
+                <h2>🧪 The Lab: "Okay, let's actually do this"</h2>
+
+                <p>I followed a hands-on lab where the goal was simple: Deploy a web app on EKS and break it on purpose. Honestly? Perfect learning setup.</p>
+
+                <h3>Step 1: IAM first (because AWS)</h3>
+
+                <p>Before touching Kubernetes, you create an admin IAM user. This immediately reminded me: Kubernetes doesn't replace cloud security — it builds on it.</p>
+
+                <h3>Step 2: An EC2 "admin" machine</h3>
+
+                <p>You launch an EC2 instance that becomes your control point. This is where kubectl, eksctl, and AWS CLI all live together and start making sense.</p>
+
+                <h3>Step 3: Tooling setup (the ritual)</h3>
+
+                <p>Installing kubectl and eksctl felt like a rite of passage. Once <code>eksctl version</code> worked, I knew I was officially allowed to proceed.</p>
+
+                <h3>Step 4: Creating the cluster (the fun command)</h3>
+
+                <p>This single command created:</p>
+                
+                <ul>
+                    <li>a Kubernetes control plane</li>
+                    <li>worker nodes</li>
+                    <li>networking</li>
+                    <li>autoscaling</li>
+                </ul>
+                
+                <p>I didn't memorize what it did. I read it. Then watched AWS build it. Much better.</p>
+
+                <h3>Step 5: Deploying the app</h3>
+
+                <p>This is where theory met reality. I applied a YAML file that:</p>
+                
+                <ul>
+                    <li>created a Deployment with two replicas</li>
+                    <li>exposed it using a LoadBalancer Service</li>
+                </ul>
+                
+                <p>When the load balancer DNS returned the app response, I genuinely smiled.</p>
+
+                <h3>Step 6: Breaking things on purpose</h3>
+
+                <p>Then came my favorite part. I terminated both worker nodes manually.</p>
+                
+                <p>And Kubernetes just… fixed it.</p>
+                
+                <p>New nodes came up. Pods rescheduled. Service kept working.</p>
+                
+                <p>This is when Kubernetes stopped being "concepts" and became trustworthy.</p>
+
+                <h2>💡 What I actually learned</h2>
+
+                <ul>
+                    <li><strong>Kubernetes isn't magic</strong> — it's control loops</li>
+                    <li><strong>YAML isn't scary</strong> once you understand intent</li>
+                    <li><strong>Failure is assumed, not avoided</strong></li>
+                    <li><strong>DevOps is about designing for recovery, not perfection</strong></li>
+                </ul>
+                
+                <p>Most importantly:</p>
+                
+                <blockquote>
+                    Kubernetes makes sense when you understand why it behaves the way it does — not when you memorize commands.
+                </blockquote>
+
+                <h2>🔮 What's next</h2>
+
+                <p>This is just the beginning. Next up for me:</p>
+                
+                <ul>
+                    <li>namespaces & RBAC</li>
+                    <li>resource limits</li>
+                    <li>debugging failed pods</li>
+                    <li>deeper EKS networking</li>
+                </ul>
+                
+                <p>But for the first time, Kubernetes doesn't feel like a monster.</p>
+                
+                <p>It feels like a system I can reason about.</p>
+                
+                <p>And honestly? That's the best place to start.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Tags Section -->
+    <section class="blog-post-tags">
+        <div class="container">
+            <h3>Tags</h3>
+            <div class="tags-list">
+                <span class="tag">Kubernetes</span>
+                <span class="tag">EKS</span>
+                <span class="tag">AWS</span>
+                <span class="tag">DevOps</span>
+                <span class="tag">Learning</span>
+                <span class="tag">Docker</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSS Subscribe and Comments Section -->
+    <section class="comments-section">
+        <div class="container">
+            <div class="comments-header">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        <h2>Share Your Thoughts</h2>
+                        <p>Have questions or insights about Kubernetes? Drop a comment below!</p>
+                    </div>
+                    <a href="https://rss.app/feeds/Wf9KAZNuqSI7CnCI.xml" class="rss-subscribe" target="_blank">
+                        📡 Subscribe via RSS
+                    </a>
+                </div>
+            </div>
+
+            <form class="comment-form" method="POST" action="https://api.staticman.net/v3/entry/github/Mcqueen-Maker/mahakmalik/main/comments">
+                <input type="hidden" name="options[redirect]" value="https://mcqueen-maker.github.io/mahakmalik/thanks.html">
+                <input type="hidden" name="options[slug]" value="blog-post-3">
+                
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="fields[name]" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="fields[email]" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="fields[message]" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span>Send Comment</span>
+                    <span>→</span>
+                </button>
+            </form>
+
+            <!-- Comments Display (would be generated by Staticman) -->
+            <div class="existing-comments">
+                <div style="text-align: center; padding: 40px; color: var(--text-muted); font-family: var(--font-mono);">
+                    <p>No comments yet. Be the first to share your thoughts!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="blog-post-footer">
+        <div class="container">
+            <div class="back-to-blog">
+                <a href="blog.html">← Back to Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
